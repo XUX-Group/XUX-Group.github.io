@@ -707,7 +707,8 @@ h3 {
   width: 118px;
   aspect-ratio: 1 / 1;
   border: 1px solid #ccc;
-  object-fit: cover;
+  background: #fafafa;
+  object-fit: contain;
 }
 
 .member-card h3 {
@@ -740,7 +741,8 @@ h3 {
   width: 100%;
   aspect-ratio: 4 / 3;
   border: 1px solid #ccc;
-  object-fit: cover;
+  background: #fafafa;
+  object-fit: contain;
 }
 
 .research-card-list {
