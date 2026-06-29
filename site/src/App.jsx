@@ -34,7 +34,7 @@ function Header() {
   const location = useLocation();
   useEffect(() => setOpen(false), [location.pathname]);
   const items = [["/", "Home"], ["/members", "Members"], ["/research", "Research"], ["/publications", "Publications"], ["/teaching", "Teaching"], ["/tutorials", "Tutorials"], ["/software", "Software"], ["/links", "Links"], ["/contact", "Contact"]];
-  return <header className="site-header"><div className="header-inner"><Link className="site-identity" to="/">Xuefei Xu's Group</Link><button className="menu-button" type="button" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen((value) => !value)}>{open ? "Close" : "Menu"}</button><nav id="primary-navigation" className={`primary-navigation ${open ? "is-open" : ""}`} aria-label="Primary navigation">{items.map(([path, label]) => <NavLink key={path} to={path} end={path === "/"} className={({ isActive }) => isActive ? "active" : undefined}>{label}</NavLink>)}</nav></div></header>;
+  return <header className="site-header"><div className="header-inner"><Link className="site-identity" to="/"><img src="/assets/logo/xu-group-logo-crop.jpg" alt="" aria-hidden="true" />Xuefei Xu's Group</Link><button className="menu-button" type="button" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen((value) => !value)}>{open ? "Close" : "Menu"}</button><nav id="primary-navigation" className={`primary-navigation ${open ? "is-open" : ""}`} aria-label="Primary navigation">{items.map(([path, label]) => <NavLink key={path} to={path} end={path === "/"} className={({ isActive }) => isActive ? "active" : undefined}>{label}</NavLink>)}</nav></div></header>;
 }
 
 function Footer() {
@@ -54,7 +54,8 @@ function PublicationEntry({ publication }) {
 }
 
 function MemberCard({ person }) {
-  return <article className="member-card"><img src={person.image} alt={person.name} loading="lazy" /><div><h3>{person.name}</h3><p className="member-role">{person.role}</p>{person.lines.map((line) => <p key={line}>{line}</p>)}{person.email && <p><a href={`mailto:${person.email}`}>{person.email}</a></p>}</div></article>;
+  const name = person.href ? <ExternalLink href={person.href}>{person.name}</ExternalLink> : person.name;
+  return <article className="member-card"><img src={person.image} alt={person.name} loading="lazy" /><div><h3>{name}</h3><p className="member-role">{person.role}</p>{person.lines.map((line) => <p key={line}>{line}</p>)}{person.email && <p><a href={`mailto:${person.email}`}>{person.email}</a></p>}</div></article>;
 }
 
 function MemberSection({ title, people }) {

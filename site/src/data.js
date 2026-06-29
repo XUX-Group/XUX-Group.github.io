@@ -59,7 +59,7 @@ export const members = {
     },
   ],
   graduate: [
-    { name: "Pengchao Zhang", role: "PhD Student (2020)", image: "/assets/members/pengchao-zhang.jpg", lines: ["Research interests: water, deep-learning molecular dynamics, quantum effects."], email: "zpc20@mails.tsinghua.edu.cn" },
+    { name: "Pengchao Zhang", role: "PhD Student (2020)", href: "https://zhang-pchao.github.io/", image: "/assets/members/pengchao-zhang.jpg", lines: ["Research interests: water, deep-learning molecular dynamics, quantum effects."], email: "zpc20@mails.tsinghua.edu.cn" },
     { name: "Ruiqing Lei", role: "PhD Student (2021)", image: "/assets/members/ruiqing-lei.jpg", lines: ["Research interest: photochemistry."], email: "leirq21@mails.tsinghua.edu.cn" },
     { name: "Bowen Zhang", role: "PhD Student (2022)", image: "/assets/members/bowen-zhang.jpg", lines: ["Research interest: catalytic reactions."], email: "zhang-bw22@mails.tsinghua.edu.cn" },
     { name: "Peng Guo", role: "PhD Student (2023)", image: "/assets/members/peng-guo.jpg", lines: ["Research interest: kinetics."], email: "gp23@mails.tsinghua.edu.cn" },
@@ -67,10 +67,17 @@ export const members = {
   ],
   undergraduate: [],
   alumni: [
+    { name: "Hui Zhang", role: "Visiting Student", image: "/assets/members/girl.png", lines: ["Before 2020.", "Entering a company to start work."] },
+    { name: "Xuan Guo", role: "Visiting Student", image: "/assets/members/girl.png", lines: ["Before 2020.", "Former visiting student."] },
+    { name: "Bo Hu", role: "Visiting Student", image: "/assets/members/girl.png", lines: ["Before 2020.", "Entering a company to start work."] },
+    { name: "Muye Feng", role: "Post-doc", image: "/assets/members/boy.png", lines: ["Postdoctoral work completed in 2020-2022.", "Research interest: molecular simulation."] },
+    { name: "Zhang Zeyun", role: "PhD, graduated 2022", image: "/assets/members/zhang-zeyun.png", lines: ["Enrolled in 2017.", "PhD thesis title: Design and Mechanism of Catalysts for Electrochemical Ammonia Synthesis Based on Two-dimensional Materials.", "Entering a career unit to start work."] },
+    { name: "Zhang Ruiming", role: "PhD, graduated 2022", image: "/assets/members/zhang-ruiming.png", lines: ["Enrolled in 2017.", "PhD thesis title: Development and Application of the Gas-phase Energy Master Equation Method.", "Entering a private company to start research work."] },
     { name: "Lu Gao", role: "PhD, graduated 2021", image: "/assets/members/lu-gao.jpg", lines: ["Thesis: Theoretical Study on the Quantum Effect for the Low-Temperature Dynamics."] },
     { name: "Xu Han", role: "PhD, graduated 2023", image: "/assets/members/xu-han.jpg", lines: ["Thesis: sulfur-conversion reactions in lithium-sulfur batteries."] },
     { name: "Yan Li", role: "PhD, graduated 2023", image: "/assets/members/yan-li.png", lines: ["Thesis: rate coefficients of radical hydrogen abstraction and hydrogen-shift reactions."] },
     { name: "Wenqi Chen", role: "PhD, graduated 2024", image: "/assets/members/wenqi-chen.jpg", lines: ["Thesis: large-amplitude anharmonic vibration effects in gas-reaction kinetics."] },
+    { name: "Wendi Dong", role: "Visiting Student", image: "/assets/members/boy.png", lines: ["Before 2022.", "Entering Stanford University for research."] },
   ],
 };
 
