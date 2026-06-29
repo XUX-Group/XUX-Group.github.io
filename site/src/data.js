@@ -14,13 +14,6 @@ export const researchAreas = [
     caption: "Pressure-dependent kinetics and energy-transfer models.",
   },
   {
-    title: "Excited-state and nonadiabatic dynamics",
-    description:
-      "Theoretical calculations for excited states, photochemistry, and nonadiabatic dynamics in molecular reaction processes.",
-    image: "/assets/research/tumme-workflow.png",
-    caption: "Dynamics and rate modeling for complex molecular systems.",
-  },
-  {
     title: "Catalyst design and clean-energy mechanisms",
     description:
       "Mechanism studies and theoretical catalyst design for transition-metal chemistry, heterogeneous catalysis, and clean-energy reactions.",
@@ -31,8 +24,8 @@ export const researchAreas = [
     title: "AI-enabled surface and interface physical chemistry",
     description:
       "Machine-learned molecular simulation and enhanced sampling for interfacial ions, nanobubbles, solvation, and physicochemical processes at complex interfaces.",
-    image: "/assets/research/li-s.png",
-    caption: "Interfacial processes in energy-related systems.",
+    image: "/assets/research/acs-phys-chem-au-2024-air-water-ions.webp",
+    caption: "AI-enabled simulations of ions at air-water interfaces.",
   },
   {
     title: "Extreme-condition reaction dynamics and method development",
@@ -48,7 +41,7 @@ export const members = {
     {
       name: "Xuefei Xu",
       role: "Principal Investigator",
-      image: "/assets/members/xuefei-xu.jpg",
+      image: "/assets/logo/xu-group-logo-crop.jpg",
       lines: [
         "Associate Professor, Center for Combustion Energy and Department of Energy and Power Engineering, Tsinghua University",
         "Research fields: theoretical and computational chemistry, chemical reaction dynamics theory, interfaces, and clean energy.",
@@ -78,7 +71,7 @@ export const members = {
   alumni: {
     postdocs: [
       { name: "Muye Feng", role: "Post-doc alumni", image: "/assets/members/boy.png", lines: ["Postdoctoral work completed in 2020-2022.", "Research interest: molecular simulation."] },
-      { name: "Changsheng Chen", role: "Post-doc alumni", image: "/assets/members/changsheng-chen.png", lines: ["Postdoctoral work completed after joining in 2024.", "Research interest: molecular dynamics."], email: "chenchangsheng@tsinghua.edu.cn" },
+      { name: "Changsheng Chen", role: "Post-doc alumni", image: "/assets/members/changsheng-chen.png", lines: ["Postdoctoral researcher, 2024-2026.", "Research interest: molecular dynamics."] },
     ],
     phd: [
       { name: "Lu Gao", role: "PhD, graduated 2021", image: "/assets/members/lu-gao.jpg", lines: ["Enrolled in 2016.", "PhD thesis title: Theoretical Study on the Quantum Effect for the Low-Temperature Dynamics.", "Entering an aerospace unit to start research work."] },
@@ -87,6 +80,7 @@ export const members = {
       { name: "Xu Han", role: "PhD, graduated 2023", image: "/assets/members/xu-han.jpg", lines: ["Enrolled in 2018.", "PhD thesis title: Theoretical study on the mechanism and catalysts of sulfur-conversion reactions in lithium-sulfur batteries.", "Entering a private company to start research work."] },
       { name: "Yan Li", role: "PhD, graduated 2023", image: "/assets/members/yan-li.png", lines: ["Enrolled in 2018.", "PhD thesis title: High-Precision Computational Study on Rate Coefficients of Radical Hydrogen Abstraction and Hydrogen-Shift Reactions.", "Entering a university to start research work."] },
       { name: "Wenqi Chen", role: "PhD, graduated 2024", image: "/assets/members/wenqi-chen.jpg", lines: ["Enrolled in 2019.", "PhD thesis title: Theoretical Study on the Effect of Large Amplitude Anharmonic Vibration on the Kinetic Calculation of Gas Reaction.", "Entering a company to start research work."] },
+      { name: "Pengchao Zhang", role: "PhD, graduated 2025", href: "https://zhang-pchao.github.io/", image: "/assets/members/pengchao-zhang.jpg", lines: ["Enrolled in 2020.", "PhD thesis title: Theoretical and computational study on the distribution of self-ions at water interfaces and its effects on physicochemical processes."] },
     ],
     visiting: [
       { name: "Hui Zhang", role: "Visiting Student", image: "/assets/members/girl.png", lines: ["Before 2020.", "Entering a company to start work."] },
@@ -98,9 +92,18 @@ export const members = {
 };
 
 export const gallery = [
-  { src: "/assets/gallery/group-2024.png", alt: "XUX group photo" },
-  { src: "/assets/gallery/group-2021-a.jpg", alt: "XUX group activity" },
-  { src: "/assets/gallery/group-2021-b.jpg", alt: "XUX group activity" },
+  { src: "/assets/gallery/group-2021-june.jpg", alt: "XUX group photo, 2021", caption: "2021 Group Photo" },
+  { src: "/assets/gallery/group-2021-a-web.jpg", alt: "XUX group activity, 2021", caption: "2021 Group Activity I" },
+  { src: "/assets/gallery/group-2021-b-web.jpg", alt: "XUX group activity, 2021", caption: "2021 Group Activity II" },
+  { src: "/assets/gallery/group-2022-wechat.jpg", alt: "XUX group photo, 2022", caption: "2022 Group Photo I" },
+  { src: "/assets/gallery/group-2022-1.jpg", alt: "XUX group photo, 2022", caption: "2022 Group Photo II" },
+  { src: "/assets/gallery/group-2023-graduation.jpg", alt: "XUX group graduation photo, 2023", caption: "2023 Graduation Photo" },
+  { src: "/assets/gallery/group-2024-graduation.jpg", alt: "XUX group graduation photo, 2024", caption: "2024 Graduation Photo I" },
+  { src: "/assets/gallery/group-2024-snipaste.jpg", alt: "XUX group photo, 2024", caption: "2024 Group Photo" },
+  { src: "/assets/gallery/group-2024.png", alt: "XUX group photo, 2024", caption: "2024 Graduation Photo II" },
+  { src: "/assets/gallery/group-2025-graduation-1.jpg", alt: "XUX group graduation photo, 2025", caption: "2025 Graduation Photo I" },
+  { src: "/assets/gallery/group-2025-graduation-2.jpg", alt: "XUX group graduation photo, 2025", caption: "2025 Graduation Photo II" },
+  { src: "/assets/gallery/group-2025-sports.jpg", alt: "XUX group sports activity, 2025", caption: "2025 Group Activity" },
 ];
 
 export const publications = [

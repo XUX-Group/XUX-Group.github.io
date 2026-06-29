@@ -38,7 +38,7 @@ function Header() {
 }
 
 function Footer() {
-  return <footer className="site-footer"><div className="section-shell footer-inner">© {new Date().getFullYear()} Xuefei Xu's Group, Tsinghua University</div></footer>;
+  return <footer className="site-footer"><div className="section-shell footer-inner">© {new Date().getFullYear()} Xuefei Xu's Group</div></footer>;
 }
 
 function PageTitle({ children }) {
@@ -47,6 +47,19 @@ function PageTitle({ children }) {
 
 function InlineLinks({ links }) {
   return <div className="inline-links">{links.map((link) => <ExternalLink key={link.href} href={link.href}>{link.label}</ExternalLink>)}</div>;
+}
+
+function GalleryCarousel({ items }) {
+  const [index, setIndex] = useState(0);
+  const current = items[index];
+  const goPrevious = () => setIndex((value) => (value === 0 ? items.length - 1 : value - 1));
+  const goNext = () => setIndex((value) => (value + 1) % items.length);
+
+  return <div className="hero-gallery"><div className="hero-gallery-frame"><img src={current.src} alt={current.alt} /><button className="gallery-button previous" type="button" aria-label="Previous photo" onClick={goPrevious}>Prev</button><button className="gallery-button next" type="button" aria-label="Next photo" onClick={goNext}>Next</button></div><div className="gallery-caption"><span>{current.caption}</span><span>{index + 1} / {items.length}</span></div><div className="gallery-dots" aria-label="Gallery photos">{items.map((item, itemIndex) => <button key={item.src} type="button" className={itemIndex === index ? "active" : undefined} aria-label={`Show ${item.caption}`} aria-current={itemIndex === index ? "true" : undefined} onClick={() => setIndex(itemIndex)} />)}</div></div>;
+}
+
+function HomeLogo() {
+  return <div className="home-logo-panel"><img src="/assets/logo/xu-group-logo-crop.jpg" alt="Xuefei Xu's Group logo" /></div>;
 }
 
 function PublicationEntry({ publication }) {
@@ -68,11 +81,11 @@ function AlumniSections({ alumni }) {
 }
 
 function HomePage() {
-  return <main className="section-shell"><section className="home-intro group-home"><div className="home-text"><h1>Xuefei Xu's Group</h1><p className="position">Theoretical and Computational Chemistry<br />Tsinghua University</p><p>We study theoretical and computational chemistry, chemical reaction dynamics, interfaces, and clean-energy chemistry, with current directions spanning high-accuracy gas-phase kinetics, excited-state and nonadiabatic dynamics, catalyst design, AI-enabled interfacial physical chemistry, and reaction dynamics under extreme conditions.</p><InlineLinks links={profileLinks} /></div><img className="profile-photo" src="/assets/members/xuefei-xu.jpg" alt="Xuefei Xu" width="400" height="533" /></section><section className="content-section notice-section"><h2>Open Positions</h2><p>The group welcomes motivated graduate students and postdoctoral researchers in theoretical chemistry, molecular simulation, machine learning for atomistic modeling, enhanced sampling, and high-performance scientific computing.</p><p>Postdoctoral applicants should send a CV, representative publications, and contact information for references to <a href="mailto:xuxuefei@tsinghua.edu.cn">xuxuefei@tsinghua.edu.cn</a> or <a href="mailto:xuxuefei@gmail.com">xuxuefei@gmail.com</a>.</p></section><section className="content-section"><div className="section-heading"><h2>Research Directions</h2><Link to="/research">More</Link></div><ul className="plain-list">{researchAreas.map((area) => <li key={area.title}>{area.title}</li>)}</ul></section><section className="content-section"><div className="section-heading"><h2>Recent Publications</h2><Link to="/publications">Full publications</Link></div><div className="publication-stack">{publications.filter((paper) => paper.featured).map((paper) => <PublicationEntry key={paper.doi} publication={paper} />)}</div></section></main>;
+  return <main className="section-shell"><section className="home-intro group-home"><div className="home-text"><h1>Xuefei Xu's Group</h1><p className="position">Theoretical and Computational Chemistry<br />Tsinghua University</p><p>We study theoretical and computational chemistry, chemical reaction dynamics, interfaces, and clean-energy chemistry, with current directions spanning high-accuracy gas-phase kinetics, catalyst design, AI-enabled interfacial physical chemistry, and reaction dynamics under extreme conditions.</p><InlineLinks links={profileLinks} /></div><HomeLogo /></section><section className="content-section notice-section"><h2>Open Positions</h2><p>The group welcomes motivated graduate students and postdoctoral researchers in theoretical chemistry, molecular simulation, machine learning for atomistic modeling, enhanced sampling, and high-performance scientific computing.</p><p>Postdoctoral applicants should send a CV, representative publications, and contact information for references to <a href="mailto:xuxuefei@tsinghua.edu.cn">xuxuefei@tsinghua.edu.cn</a> or <a href="mailto:xuxuefei@gmail.com">xuxuefei@gmail.com</a>.</p><p><ExternalLink href="https://postdoctor.tsinghua.edu.cn/info/zxtz/2097">Tsinghua University Shuimu Scholar Program Global Recruitment</ExternalLink></p></section><section className="content-section"><div className="section-heading"><h2>Research Directions</h2><Link to="/research">More</Link></div><ul className="plain-list">{researchAreas.map((area) => <li key={area.title}>{area.title}</li>)}</ul></section><section className="content-section"><div className="section-heading"><h2>Recent Publications</h2><Link to="/publications">Full publications</Link></div><div className="publication-stack">{publications.filter((paper) => paper.featured).map((paper) => <PublicationEntry key={paper.doi} publication={paper} />)}</div></section></main>;
 }
 
 function MembersPage() {
-  return <main><PageTitle>Members</PageTitle><div className="section-shell page-content"><MemberSection title="Principal Investigator" people={members.pi} /><MemberSection title="Postdocs" people={members.postdocs} /><MemberSection title="Graduate Students" people={members.graduate} /><MemberSection title="Undergraduate Students" people={members.undergraduate} /><AlumniSections alumni={members.alumni} /><section className="content-section"><h2>Gallery</h2><div className="gallery-grid">{gallery.map((item) => <img key={item.src} src={item.src} alt={item.alt} loading="lazy" />)}</div></section></div></main>;
+  return <main><PageTitle>Members</PageTitle><div className="section-shell page-content"><MemberSection title="Principal Investigator" people={members.pi} /><MemberSection title="Postdocs" people={members.postdocs} /><MemberSection title="Graduate Students" people={members.graduate} /><MemberSection title="Undergraduate Students" people={members.undergraduate} /><AlumniSections alumni={members.alumni} /><section className="content-section"><h2>Gallery</h2><GalleryCarousel items={gallery} /><div className="gallery-grid">{gallery.map((item) => <img key={item.src} src={item.src} alt={item.alt} loading="lazy" />)}</div></section></div></main>;
 }
 
 function ResearchPage() {
