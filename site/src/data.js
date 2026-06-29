@@ -7,32 +7,39 @@ export const profileLinks = [
 
 export const researchAreas = [
   {
-    title: "Chemical Reaction Dynamics",
+    title: "High-accuracy gas-phase reaction dynamics",
     description:
-      "Kinetics of radical reactions important for combustion, atmospheric chemistry, and interstellar chemistry, with emphasis on anharmonic effects, pressure dependence, and quantum effects at low temperature.",
+      "High-accuracy theoretical kinetics for key gas-phase reactions in combustion, atmospheric chemistry, and interstellar chemistry, with emphasis on anharmonic effects, pressure dependence, and quantum effects.",
     image: "/assets/research/hpl-lpl.png",
     caption: "Pressure-dependent kinetics and energy-transfer models.",
   },
   {
-    title: "Computational Methods and Software",
+    title: "Excited-state and nonadiabatic dynamics",
     description:
-      "Master-equation solvers and multistructural torsional anharmonicity methods for rate calculations and thermochemistry.",
+      "Theoretical calculations for excited states, photochemistry, and nonadiabatic dynamics in molecular reaction processes.",
     image: "/assets/research/tumme-workflow.png",
-    caption: "Workflow of TUMME.",
+    caption: "Dynamics and rate modeling for complex molecular systems.",
   },
   {
-    title: "Surface and Interface Catalysis",
+    title: "Catalyst design and clean-energy mechanisms",
     description:
-      "Mechanisms and catalyst design for heterogeneous and interfacial reactions, including electrocatalytic nitrogen reduction and lithium-sulfur battery chemistry.",
+      "Mechanism studies and theoretical catalyst design for transition-metal chemistry, heterogeneous catalysis, and clean-energy reactions.",
     image: "/assets/research/nrr-mechanisms.png",
     caption: "Reaction mechanisms on two-dimensional catalysts.",
   },
   {
-    title: "Molecular Simulation at Aqueous Interfaces",
+    title: "AI-enabled surface and interface physical chemistry",
     description:
-      "Machine-learned molecular dynamics and enhanced sampling for ions, nanobubbles, solvation, and reaction mechanisms at complex interfaces.",
+      "Machine-learned molecular simulation and enhanced sampling for interfacial ions, nanobubbles, solvation, and physicochemical processes at complex interfaces.",
     image: "/assets/research/li-s.png",
-    caption: "Interfacial reaction pathways in energy-related systems.",
+    caption: "Interfacial processes in energy-related systems.",
+  },
+  {
+    title: "Extreme-condition reaction dynamics and method development",
+    description:
+      "Reaction dynamics under extreme conditions and computational method development, including master-equation solvers and multistructural torsional anharmonicity tools.",
+    image: "/assets/research/tumme-workflow.png",
+    caption: "Workflow of TUMME and related method-development tools.",
   },
 ];
 
@@ -44,6 +51,7 @@ export const members = {
       image: "/assets/members/xuefei-xu.jpg",
       lines: [
         "Associate Professor, Center for Combustion Energy and Department of Energy and Power Engineering, Tsinghua University",
+        "Research fields: theoretical and computational chemistry, chemical reaction dynamics theory, interfaces, and clean energy.",
         "Research interests: excited states, photochemistry, nonadiabatic dynamics, chemical reaction kinetics, transition metals, and catalytic reactions.",
       ],
       email: "xuxuefei@tsinghua.edu.cn",
@@ -51,26 +59,28 @@ export const members = {
   ],
   postdocs: [
     {
-      name: "Changsheng Chen",
-      role: "Postdoctoral Researcher (2024)",
-      image: "/assets/members/changsheng-chen.png",
-      lines: ["Research interest: molecular dynamics."],
-      email: "chenchangsheng@tsinghua.edu.cn",
+      name: "Pengchao Zhang",
+      role: "Postdoctoral Researcher",
+      href: "https://zhang-pchao.github.io/",
+      image: "/assets/members/pengchao-zhang.jpg",
+      lines: ["Research interests: water, deep-learning molecular dynamics, quantum effects."],
+      email: "zpc20@mails.tsinghua.edu.cn",
     },
   ],
   graduate: [
-    { name: "Pengchao Zhang", role: "PhD Student (2020)", href: "https://zhang-pchao.github.io/", image: "/assets/members/pengchao-zhang.jpg", lines: ["Research interests: water, deep-learning molecular dynamics, quantum effects."], email: "zpc20@mails.tsinghua.edu.cn" },
     { name: "Ruiqing Lei", role: "PhD Student (2021)", image: "/assets/members/ruiqing-lei.jpg", lines: ["Research interest: photochemistry."], email: "leirq21@mails.tsinghua.edu.cn" },
     { name: "Bowen Zhang", role: "PhD Student (2022)", image: "/assets/members/bowen-zhang.jpg", lines: ["Research interest: catalytic reactions."], email: "zhang-bw22@mails.tsinghua.edu.cn" },
     { name: "Peng Guo", role: "PhD Student (2023)", image: "/assets/members/peng-guo.jpg", lines: ["Research interest: kinetics."], email: "gp23@mails.tsinghua.edu.cn" },
     { name: "Xiangdang Guo", role: "PhD Student (2024)", image: "/assets/members/xiangdang-guo.jpg", lines: ["Research interest: theoretical and computational chemistry."], email: "" },
+    { name: "Chang Qi", role: "PhD Student", image: "/assets/members/boy.png", lines: ["Research interest: theoretical and computational chemistry."], email: "" },
   ],
   undergraduate: [],
   alumni: [
     { name: "Hui Zhang", role: "Visiting Student", image: "/assets/members/girl.png", lines: ["Before 2020.", "Entering a company to start work."] },
     { name: "Xuan Guo", role: "Visiting Student", image: "/assets/members/girl.png", lines: ["Before 2020.", "Former visiting student."] },
     { name: "Bo Hu", role: "Visiting Student", image: "/assets/members/girl.png", lines: ["Before 2020.", "Entering a company to start work."] },
-    { name: "Muye Feng", role: "Post-doc", image: "/assets/members/boy.png", lines: ["Postdoctoral work completed in 2020-2022.", "Research interest: molecular simulation."] },
+    { name: "Muye Feng", role: "Post-doc alumni", image: "/assets/members/boy.png", lines: ["Postdoctoral work completed in 2020-2022.", "Research interest: molecular simulation."] },
+    { name: "Changsheng Chen", role: "Post-doc alumni", image: "/assets/members/changsheng-chen.png", lines: ["Postdoctoral work completed after joining in 2024.", "Research interest: molecular dynamics."], email: "chenchangsheng@tsinghua.edu.cn" },
     { name: "Zhang Zeyun", role: "PhD, graduated 2022", image: "/assets/members/zhang-zeyun.png", lines: ["Enrolled in 2017.", "PhD thesis title: Design and Mechanism of Catalysts for Electrochemical Ammonia Synthesis Based on Two-dimensional Materials.", "Entering a career unit to start work."] },
     { name: "Zhang Ruiming", role: "PhD, graduated 2022", image: "/assets/members/zhang-ruiming.png", lines: ["Enrolled in 2017.", "PhD thesis title: Development and Application of the Gas-phase Energy Master Equation Method.", "Entering a private company to start research work."] },
     { name: "Lu Gao", role: "PhD, graduated 2021", image: "/assets/members/lu-gao.jpg", lines: ["Thesis: Theoretical Study on the Quantum Effect for the Low-Temperature Dynamics."] },
@@ -105,7 +115,7 @@ export const software = [
 ];
 
 export const courses = [
-  { title: "Physical Chemistry in Energy Utilization", detail: "Undergraduate course, 30140473, Spring semester. Teachers: Xuefei Xu, Remy Mevel." },
+  { title: "Physical Chemistry in Energy Utilization", detail: "Undergraduate course, 30140473, Spring semester. Teacher: Xuefei Xu." },
   { title: "Fundamentals and Applications of Quantum Chemistry", detail: "Graduate course, 80140402, Autumn semester. Teacher: Xuefei Xu." },
 ];
 
@@ -115,7 +125,24 @@ export const tutorials = [
 
 export const linkGroups = [
   { title: "Support", links: [{ label: "Tsinghua University", href: "https://www.tsinghua.edu.cn/en/" }, { label: "Center for Combustion Energy", href: "https://www.cce.tsinghua.edu.cn/" }] },
-  { title: "Journals", links: [{ label: "JACS", href: "https://pubs.acs.org/journal/jacsat" }, { label: "JCTC", href: "https://pubs.acs.org/journal/jctcce" }] },
+  {
+    title: "Journals",
+    links: [
+      { label: "JACS", href: "https://pubs.acs.org/journal/jacsat" },
+      { label: "JCTC", href: "https://pubs.acs.org/journal/jctcce" },
+      { label: "J. Phys. Chem. A/B/C", href: "https://pubs.acs.org/journal/jpcafh" },
+      { label: "J. Phys. Chem. Lett.", href: "https://pubs.acs.org/journal/jpclcd" },
+      { label: "J. Chem. Phys.", href: "https://pubs.aip.org/aip/jcp" },
+      { label: "Phys. Chem. Chem. Phys.", href: "https://www.rsc.org/journals-books-databases/about-journals/pccp/" },
+      { label: "Chemical Science", href: "https://www.rsc.org/journals-books-databases/about-journals/chemical-science/" },
+      { label: "Faraday Discussions", href: "https://www.rsc.org/journals-books-databases/about-journals/faraday-discussions/" },
+      { label: "Angewandte Chemie", href: "https://chemistry-europe.onlinelibrary.wiley.com/journal/15213773" },
+      { label: "WIREs Computational Molecular Science", href: "https://wires.onlinelibrary.wiley.com/journal/17590884" },
+      { label: "Theoretical Chemistry Accounts", href: "https://link.springer.com/journal/214" },
+      { label: "Nature Chemistry", href: "https://www.nature.com/nchem/" },
+      { label: "Science", href: "https://www.science.org/" },
+    ],
+  },
   { title: "Databases", links: [{ label: "NIST Chemistry WebBook", href: "https://webbook.nist.gov/chemistry/" }, { label: "Google Scholar", href: "https://scholar.google.com/citations?user=dYIdNgIAAAAJ&hl=en" }] },
   { title: "Internal", links: [{ label: "GitHub Organization", href: "https://github.com/XUX-Group" }] },
 ];
