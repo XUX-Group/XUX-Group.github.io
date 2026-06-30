@@ -48,6 +48,26 @@ export const members = {
         "Research interests: excited states, photochemistry, nonadiabatic dynamics, chemical reaction kinetics, transition metals, and catalytic reactions.",
       ],
       email: "xuxuefei@tsinghua.edu.cn",
+      detail: {
+        phone: "010-62796755",
+        emails: ["xuxuefei@tsinghua.edu.cn", "xuxuefei@gmail.com"],
+        address: "Room B551, Lee Shau Kee Technology Building, Tsinghua University, Beijing 100084, China",
+        research:
+          "Theoretical and computational studies of excited states, photochemistry, nonadiabatic excited-state dynamics, chemical reaction dynamics, transition metals, and catalytic reactions. Current directions include high-accuracy theoretical calculations for key gas-phase reaction dynamics in combustion, atmospheric, and interstellar chemistry; catalyst design and mechanism studies; AI-enabled surface and interface physical chemistry; and reaction dynamics under extreme conditions with method development.",
+        education: [
+          "Ph.D. in Chemistry, Xiamen University, 09/2001-06/2006",
+          "B.S. in Chemistry, Xiamen University, 09/1997-07/2001",
+        ],
+        appointments: [
+          "Associate Professor, Center for Combustion Energy and Department of Energy and Power Engineering, Tsinghua University, 07/2015-present",
+          "Research Associate, Department of Chemistry, University of Minnesota, 07/2013-05/2015",
+          "Postdoctoral Researcher, Department of Chemistry, University of Minnesota, 07/2010-06/2013",
+          "Postdoctoral Researcher, Hebrew University of Jerusalem, 05/2008-05/2010",
+          "Research Assistant, Hong Kong Baptist University, 02/2008-05/2008",
+          "Lecturer, Department of Chemistry, Xiamen University, 07/2006-04/2008",
+          "Research Assistant, City University of Hong Kong, 09/2004-02/2005",
+        ],
+      },
     },
   ],
   postdocs: [

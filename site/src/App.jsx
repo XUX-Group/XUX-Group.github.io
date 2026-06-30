@@ -10,6 +10,7 @@ function ScrollToTop() {
 
 function DocumentTitle() {
   const { pathname } = useLocation();
+  const member = findMemberBySlug(pathname.replace("/members/", ""));
   const titles = {
     "/": "Xuefei Xu's Group",
     "/members": "Members | Xuefei Xu's Group",
@@ -20,7 +21,7 @@ function DocumentTitle() {
     "/links": "Links | Xuefei Xu's Group",
     "/contact": "Contact | Xuefei Xu's Group",
   };
-  useEffect(() => { document.title = titles[pathname] || "Xuefei Xu's Group"; }, [pathname]);
+  useEffect(() => { document.title = member ? `${member.name} | Xuefei Xu's Group` : titles[pathname] || "Xuefei Xu's Group"; }, [pathname, member]);
   return null;
 }
 
@@ -48,6 +49,26 @@ function InlineLinks({ links }) {
   return <div className="inline-links">{links.map((link) => <ExternalLink key={link.href} href={link.href}>{link.label}</ExternalLink>)}</div>;
 }
 
+function slugify(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function allMembers() {
+  return [
+    ...members.pi,
+    ...members.postdocs,
+    ...members.graduate,
+    ...members.undergraduate,
+    ...members.alumni.postdocs,
+    ...members.alumni.phd,
+    ...members.alumni.visiting,
+  ];
+}
+
+function findMemberBySlug(slug) {
+  return allMembers().find((person) => slugify(person.name) === slug);
+}
+
 function GalleryCarousel({ items }) {
   const [index, setIndex] = useState(0);
   const current = items[index];
@@ -66,7 +87,7 @@ function PublicationEntry({ publication }) {
 }
 
 function MemberCard({ person }) {
-  const name = person.href ? <ExternalLink href={person.href}>{person.name}</ExternalLink> : person.name;
+  const name = <Link to={`/members/${slugify(person.name)}`}>{person.name}</Link>;
   return <article className="member-card"><img src={person.image} alt={person.name} loading="lazy" /><div><h3>{name}</h3><p className="member-role">{person.role}</p>{person.lines.map((line) => <p key={line}>{line}</p>)}{person.email && <p><a href={`mailto:${person.email}`}>{person.email}</a></p>}</div></article>;
 }
 
@@ -85,6 +106,13 @@ function HomePage() {
 
 function MembersPage() {
   return <main><PageTitle>Members</PageTitle><div className="section-shell page-content"><MemberSection title="Principal Investigator" people={members.pi} /><MemberSection title="Postdocs" people={members.postdocs} /><MemberSection title="Graduate Students" people={members.graduate} /><MemberSection title="Undergraduate Students" people={members.undergraduate} /><AlumniSections alumni={members.alumni} /><section className="content-section"><h2>Gallery</h2><GalleryCarousel items={gallery} /><div className="gallery-grid">{gallery.map((item) => <img key={item.src} src={item.src} alt={item.alt} loading="lazy" />)}</div></section></div></main>;
+}
+
+function MemberDetailPage() {
+  const { pathname } = useLocation();
+  const person = findMemberBySlug(pathname.replace("/members/", ""));
+  if (!person) return <NotFoundPage />;
+  return <main><PageTitle>{person.name}</PageTitle><div className="section-shell page-content member-detail"><section className="member-detail-hero"><img src={person.image} alt={person.name} /><div><h2>{person.role}</h2>{person.lines.map((line) => <p key={line}>{line}</p>)}{person.href && <p><ExternalLink href={person.href}>Personal Website</ExternalLink></p>}{person.email && <p><a href={`mailto:${person.email}`}>{person.email}</a></p>}</div></section>{person.detail && <><section className="content-section"><h2>Research Interests</h2><p>{person.detail.research}</p></section><section className="content-section detail-grid"><div><h2>Contact</h2><p>Phone: {person.detail.phone}</p>{person.detail.emails.map((email) => <p key={email}><a href={`mailto:${email}`}>{email}</a></p>)}<p>{person.detail.address}</p></div><div><h2>Education</h2><ul>{person.detail.education.map((item) => <li key={item}>{item}</li>)}</ul></div></section><section className="content-section"><h2>Professional Appointments</h2><ul>{person.detail.appointments.map((item) => <li key={item}>{item}</li>)}</ul></section></>}</div></main>;
 }
 
 function ResearchPage() {
@@ -112,7 +140,7 @@ function LinksPage() {
 }
 
 function ContactPage() {
-  return <main><PageTitle>Contact</PageTitle><div className="section-shell page-content contact-content"><section><h2>Address</h2><p>Room B543, Lee Shau Kee Technology Building</p><p>Tsinghua University, Beijing 100084, China</p></section><section><h2>Email</h2><p><a href="mailto:xuxuefei@tsinghua.edu.cn">xuxuefei@tsinghua.edu.cn</a></p><p><a href="mailto:xuxuefei@gmail.com">xuxuefei@gmail.com</a></p></section><section><h2>Telephone</h2><p>010-62796755</p></section><section><h2>Academic Profiles</h2><InlineLinks links={profileLinks} /></section></div></main>;
+  return <main><PageTitle>Contact</PageTitle><div className="section-shell page-content contact-content"><section><h2>Address</h2><p>Room B551, Lee Shau Kee Technology Building</p><p>Tsinghua University, Beijing 100084, China</p></section><section><h2>Email</h2><p><a href="mailto:xuxuefei@tsinghua.edu.cn">xuxuefei@tsinghua.edu.cn</a></p><p><a href="mailto:xuxuefei@gmail.com">xuxuefei@gmail.com</a></p></section><section><h2>Telephone</h2><p>010-62796755</p></section><section><h2>Academic Profiles</h2><InlineLinks links={profileLinks} /></section></div></main>;
 }
 
 function NotFoundPage() {
@@ -120,7 +148,7 @@ function NotFoundPage() {
 }
 
 function AppLayout() {
-  return <><ScrollToTop /><DocumentTitle /><Header /><Routes><Route path="/" element={<HomePage />} /><Route path="/members" element={<MembersPage />} /><Route path="/research" element={<ResearchPage />} /><Route path="/publications" element={<PublicationsPage />} /><Route path="/teaching" element={<TeachingPage />} /><Route path="/software" element={<SoftwarePage />} /><Route path="/links" element={<LinksPage />} /><Route path="/contact" element={<ContactPage />} /><Route path="*" element={<NotFoundPage />} /></Routes><Footer /></>;
+  return <><ScrollToTop /><DocumentTitle /><Header /><Routes><Route path="/" element={<HomePage />} /><Route path="/members" element={<MembersPage />} /><Route path="/members/:slug" element={<MemberDetailPage />} /><Route path="/research" element={<ResearchPage />} /><Route path="/publications" element={<PublicationsPage />} /><Route path="/teaching" element={<TeachingPage />} /><Route path="/software" element={<SoftwarePage />} /><Route path="/links" element={<LinksPage />} /><Route path="/contact" element={<ContactPage />} /><Route path="*" element={<NotFoundPage />} /></Routes><Footer /></>;
 }
 
 export function App() {
