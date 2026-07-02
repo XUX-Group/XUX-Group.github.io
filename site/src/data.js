@@ -1,6 +1,7 @@
 export const profileLinks = [
   { label: "Google Scholar", href: "https://scholar.google.com/citations?user=dYIdNgIAAAAJ&hl=en" },
   { label: "ORCID", href: "https://orcid.org/0000-0002-2009-0483" },
+  { label: "GitHub", href: "https://github.com/XUX-Group" },
   { label: "CCE", href: "https://www.cce.tsinghua.edu.cn/info/1005/2121.htm" },
   { label: "DEPE", href: "https://www.te.tsinghua.edu.cn/info/1325/1791.htm" },
 ];
@@ -85,7 +86,8 @@ export const members = {
     { name: "Bowen Zhang", role: "PhD Student (2022)", image: "/assets/members/bowen-zhang.jpg", lines: ["Research interest: catalytic reactions."], email: "zhang-bw22@mails.tsinghua.edu.cn" },
     { name: "Peng Guo", role: "PhD Student (2023)", image: "/assets/members/peng-guo.jpg", lines: ["Research interest: kinetics."], email: "gp23@mails.tsinghua.edu.cn" },
     { name: "Xiangdang Guo", role: "PhD Student (2024)", image: "/assets/members/xiangdang-guo.jpg", lines: ["Research interest: theoretical and computational chemistry."], email: "" },
-    { name: "Chang Qi", role: "PhD Student", image: "/assets/members/boy.png", lines: ["Research interest: theoretical and computational chemistry."], email: "" },
+    { name: "Zouwei Hu", role: "PhD Student (2025)", image: "/assets/members/boy.png", lines: ["Research interest: theoretical and computational chemistry."], email: "" },
+    { name: "Chang Qi", role: "PhD Student (2026)", image: "/assets/members/boy.png", lines: ["Research interest: theoretical and computational chemistry."], email: "" },
   ],
   undergraduate: [],
   alumni: {
@@ -97,7 +99,7 @@ export const members = {
       { name: "Lu Gao", role: "PhD, graduated 2021", image: "/assets/members/lu-gao.jpg", lines: ["Enrolled in 2016.", "PhD thesis title: Theoretical Study on the Quantum Effect for the Low-Temperature Dynamics.", "Entering an aerospace unit to start research work."] },
       { name: "Zhang Zeyun", role: "PhD, graduated 2022", image: "/assets/members/zhang-zeyun.png", lines: ["Enrolled in 2017.", "PhD thesis title: Design and Mechanism of Catalysts for Electrochemical Ammonia Synthesis Based on Two-dimensional Materials.", "Entering a career unit to start work."] },
       { name: "Zhang Ruiming", role: "PhD, graduated 2022", image: "/assets/members/zhang-ruiming.png", lines: ["Enrolled in 2017.", "PhD thesis title: Development and Application of the Gas-phase Energy Master Equation Method.", "Entering a private company to start research work."] },
-      { name: "Xu Han", role: "PhD, graduated 2023", image: "/assets/members/xu-han.jpg", lines: ["Enrolled in 2018.", "PhD thesis title: Theoretical study on the mechanism and catalysts of sulfur-conversion reactions in lithium-sulfur batteries.", "Entering a private company to start research work."] },
+      { name: "Xu Han", role: "PhD, graduated 2024", image: "/assets/members/xu-han.jpg", lines: ["Enrolled in 2018.", "PhD thesis title: Theoretical study on the mechanism and catalysts of sulfur-conversion reactions in lithium-sulfur batteries.", "Entering a private company to start research work."] },
       { name: "Yan Li", role: "PhD, graduated 2023", image: "/assets/members/yan-li.png", lines: ["Enrolled in 2018.", "PhD thesis title: High-Precision Computational Study on Rate Coefficients of Radical Hydrogen Abstraction and Hydrogen-Shift Reactions.", "Entering a university to start research work."] },
       { name: "Wenqi Chen", role: "PhD, graduated 2024", image: "/assets/members/wenqi-chen.jpg", lines: ["Enrolled in 2019.", "PhD thesis title: Theoretical Study on the Effect of Large Amplitude Anharmonic Vibration on the Kinetic Calculation of Gas Reaction.", "Entering a company to start research work."] },
       { name: "Pengchao Zhang", role: "PhD, graduated 2025", href: "https://zhang-pchao.github.io/", image: "/assets/members/pengchao-zhang.jpg", lines: ["Enrolled in 2020.", "PhD thesis title: Theoretical and computational study on the distribution of self-ions at water interfaces and its effects on physicochemical processes."] },

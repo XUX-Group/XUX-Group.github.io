@@ -124,7 +124,7 @@ function PublicationsPage() {
     (groups[paper.year] ||= []).push(paper);
     return groups;
   }, {});
-  return <main><PageTitle>Publications</PageTitle><div className="section-shell page-content"><section className="content-section first"><div className="section-heading"><h2>Publications by Year</h2><ExternalLink href="https://scholar.google.com/citations?user=dYIdNgIAAAAJ&hl=en">Google Scholar</ExternalLink></div>{Object.entries(publicationsByYear).map(([year, papers]) => <section className="publication-year-section" key={year}><h3>{year}</h3><div className="publication-stack">{papers.map((paper) => <PublicationEntry key={paper.doi} publication={paper} />)}</div></section>)}</section></div></main>;
+  return <main><PageTitle>Publications</PageTitle><div className="section-shell page-content"><section className="content-section first"><div className="section-heading"><h2>Publications by Year</h2><ExternalLink href="https://scholar.google.com/citations?user=dYIdNgIAAAAJ&hl=en">Google Scholar</ExternalLink></div>{Object.entries(publicationsByYear).sort(([a], [b]) => Number(b) - Number(a)).map(([year, papers]) => <section className="publication-year-section" key={year}><h3>{year}</h3><div className="publication-stack">{papers.map((paper) => <PublicationEntry key={paper.doi} publication={paper} />)}</div></section>)}</section></div></main>;
 }
 
 function TeachingPage() {
